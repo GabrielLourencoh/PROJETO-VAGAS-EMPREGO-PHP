@@ -1,0 +1,47 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+.cor-fundo-cinza {
+    background-color: #d1cdcd; 
+}
+.cor-fundo-cinza-claro {
+    background-color: #eee7e7; 
+}
+
+.titulo-maior {
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+.titulo-card{
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+}
+.txt-maior{
+    font-size: 1.2rem;
+}
+.cor-fundo-rodape{
+    background-color: #3a3535;
+}
+
+.card{
+    transition: all 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.08);
+}
+
+.container-form {
+    max-width: 57rem;
+    background: white;
+    border-radius: 0.5rem;
+}
+.fundo-texto-form {
+    background: #26303b;
+    border-radius: 0.5rem;
+}
+
+#espaco-formulario {
+    margin-bottom: 5.5rem; 
+}
+
