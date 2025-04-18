@@ -11,14 +11,15 @@
     <!-- scripts do documento -->
      <script src="js/jquery-3.7.1.min.js" defer></script>
      <script src="js/bootstrap.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/especifico.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body class="bg-light">
 <?php
-    include 'base_header.php';
+    include 'partials/base_header.php';
 ?>
 <div class="cor-fundo-cinza pt-2 pb-5">
     <div class="container mt-5 text-center">
@@ -116,7 +117,7 @@
 
 
 <?php
-    include 'base_footer.php';
+    include 'partials/base_footer.php';
 ?>
 
 </body>

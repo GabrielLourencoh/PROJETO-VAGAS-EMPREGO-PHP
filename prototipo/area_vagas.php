@@ -18,7 +18,7 @@
 
 <body class="bg-light">
 <?php
-    include 'base_header.php';
+    include 'partials/base_header.php';
 ?>
 <div class="cor-fundo-cinza pt-2 pb-5">
     <!-- tlvz futuramente transformar em um carrossel -->
@@ -224,7 +224,7 @@
 
 
 <?php
-    include 'base_footer.php';
+    include 'partials/base_footer.php';
 ?>
 
 

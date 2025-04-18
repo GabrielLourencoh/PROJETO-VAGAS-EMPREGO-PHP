@@ -20,7 +20,7 @@
     <div class="cor-fundo-cinza-claro">
 
     <?php
-        include 'base_header.php';
+        include 'partials/base_header.php';
     ?>
 
 
@@ -79,7 +79,7 @@
 
 
 <?php
-    include 'base_footer.php';
+    include 'partials/base_footer.php';
 ?>
 </div>
 </body>

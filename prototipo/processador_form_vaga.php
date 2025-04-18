@@ -59,7 +59,7 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) &&
 <body class="bg-light">
 
 <?php
-    include 'base_header.php';
+    include 'partials/base_header.php';
 ?>
 
 
@@ -83,7 +83,7 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) &&
 <div class="cor-fundo-cinza-claro pb-5"></div>
 
 <?php
-    include 'base_footer.php';
+    include 'partials/base_footer.php';
 ?>
 
 </body>
