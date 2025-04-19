@@ -48,7 +48,7 @@
                 <p class="text-center">Ainda não possui conta? <a href= "cadastro.html" >Cadastrar-se</a></p>
                 <?php
                     if(isset($_POST['email']) && isset($_POST['email'])){
-                        include 'conexao.php';
+                        include 'database/conexao.php';
 
                         $email = $_POST['email'];
                         $senha = $_POST['senha'];

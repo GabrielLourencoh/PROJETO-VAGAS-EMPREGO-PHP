@@ -66,7 +66,7 @@
 
                     <?php
                         if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['profissao']) && isset($_POST['senha'])){
-                            include 'conexao.php';
+                            include 'database/conexao.php';
 
                             $nome = $_POST['nome'];
                             $email = $_POST['email'];

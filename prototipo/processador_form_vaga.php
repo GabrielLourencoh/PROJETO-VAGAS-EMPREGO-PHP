@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['nome_vaga']) && isset($_POST['descricao'])) {
-    include 'conexao.php';
+    include 'database/conexao.php';
 
     $nome = $_POST['nome'];
     $nome_vaga = $_POST['nome_vaga'];
@@ -71,7 +71,7 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) &&
                     <div class="card-body">
                         <h5 class="titulo-maior display-4">Resultado - Cadastro da Vaga</h5>
                         <p class="lead titulo-card"><?php echo $mensagem ?></p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@
             <div class="col-12 col-md-6 pb-5">
                 <h1 class="display-3 titulo-maior">Vagas abertas para todo Brasil</h1>
                 <p class="lead txt-maior">Seu próximo emprego pode estar a um clique de distância! Descubra vagas abertas em diversas áreas e conquiste a oportunidade que você merece.</p>
-                <a href="cadastro.html" role="button" class="btn btn-info btn-lg">Cadastrar-se</a>
+                <a href="cadastro.php" role="button" class="btn btn-info btn-lg">Cadastrar-se</a>
             </div>
         </div>
     </div>
