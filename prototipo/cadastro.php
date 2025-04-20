@@ -58,30 +58,46 @@
                     </div>
                     <div class="mb-3">
                         <label>Confirmação de Senha</label>
-                        <input type="password" class="form-control" placeholder="Confirme sua Senha" required>
+                        <input type="password" class="form-control" placeholder="Confirme sua Senha" name="confirmSenha" required>
                     </div>
                     <button type="submit" class="btn btn-primary w-100 mt-4">Enviar</button>
                 
                     <p class="text-center mt-3">Ja possui uma conta? <a href= "login.html" >Entrar</a></p>
 
                     <?php
-                        if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['profissao']) && isset($_POST['senha'])){
+                        if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['profissao']) && isset($_POST['senha']) && isset($_POST['confirmSenha'])){
                             include 'database/conexao.php';
 
                             $nome = $_POST['nome'];
                             $email = $_POST['email'];
                             $profissao = $_POST['profissao'];
                             $senha = $_POST['senha'];
+                            $confirmSenha = $_POST['confirmSenha'];
                             $sql_consulta = "select * from usuarios where email = '$email'";
                             $query_consulta = mysqli_query($conn, $sql_consulta);
 
+                            // if ($senha != $confirmSenha){
+                            //     echo "<p class='text-danger text-center'>Senha e confirmação de senha apresentam diferenças no cadastro! </p>";
+                            // } else {
+                            //     if ($query_consulta && mysqli_num_rows($query_consulta) > 0){
+                            //         echo "<p class='text-danger text-center'>Cadastro inválido, já existe um cadastro feito no e-mail - {$email}!</p>";
+                            //     } else {                               
+                            //         $sql = "insert into usuarios (nome, email, profissao, senha) values ('$nome', '$email', '$profissao', '$senha')";                                
+                            //         $query = mysqli_query($conn, $sql);
+                            //         echo "<p class='text-center text-success'>Cadastro concluído!</p>";
+                            //     }
+                            // }
+
                             if ($query_consulta && mysqli_num_rows($query_consulta) > 0){
                                 echo "<p class='text-danger text-center'>Cadastro inválido, já existe um cadastro feito no e-mail - {$email}!</p>";
-                            } else {                               
-                                $sql = "insert into usuarios (nome, email, profissao, senha) values ('$nome', '$email', '$profissao', '$senha')";                                
-                                $query = mysqli_query($conn, $sql);
-
-                                echo "<p class='text-center text-success'>Cadastro concluído!</p>";
+                            } else {
+                                if ($senha != $confirmSenha){
+                                    echo "<p class='text-danger text-center'>Senha e confirmação de senha apresentam diferenças no cadastro! </p>";
+                                } else {
+                                    $sql = "insert into usuarios (nome, email, profissao, senha) values ('$nome', '$email', '$profissao', '$senha')";                                
+                                    $query = mysqli_query($conn, $sql);
+                                    echo "<p class='text-center text-success'>Cadastro concluído!</p>";
+                                }
                             }
                             
 
