@@ -98,16 +98,7 @@
                                     $query = mysqli_query($conn, $sql);
                                     echo "<p class='text-center text-success'>Cadastro concluído!</p>";
                                 }
-                            }
-                            
-
-                            
-                            // if ($query){
-                            //     echo "<p class='text-center text-success'>Cadastro concluído!</p>";
-                            // } else {
-                            //     echo "<p class='text-danger text-success'>Cadastro inválido!</p>";
-                            // }
-                            
+                            }                  
                             mysqli_close($conn);
                         }
                     ?>
