@@ -29,7 +29,7 @@
                         <h5 class="titulo-maior">Engenheiro de Software Sênior</h5>
                         <p class="lead titulo-card">Experiência em C++, Java, Microserviços</p>
                             <p class="lead">Experiência com arquitetura de software escaláveis e performáticos.</p>
-                    <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                    <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                 </div>
             </div>
         

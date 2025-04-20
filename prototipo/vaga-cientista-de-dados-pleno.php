@@ -29,7 +29,7 @@
                             <h5 class="titulo-maior">Cientista de Dados Pleno</h5>
                             <p class="lead titulo-card">Expertise em Machine Learning, Python, R, SQL, e Big Data</p>
                             <p class="lead">Conhecimento em modelos de Deep Learning e ferramentas como TensorFlow e Keras.</p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
             </div>
         

@@ -29,7 +29,7 @@
                         <h5 class="titulo-maior">Estagiário de Análise de Dados</h5>
                         <p class="lead titulo-card">Conhecimento em Excel, SQL e Python básico</p>
                             <p class="lead">Auxiliar na coleta, organização e análise de dados para gerar insights.</p>
-                    <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                    <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                 </div>
             </div>
         

@@ -29,7 +29,7 @@
                         <h5 class="titulo-maior">Desenvolvedor Pleno</h5>
                         <p class="lead titulo-card">HTML, CSS, JavaScript, React.js, Controle de versão - Git e Github</p>
                             <p class="lead">Aqui, valorizamos resolução de problemas, trabalho em equipe e comunicação eficaz.</p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
             </div>
         

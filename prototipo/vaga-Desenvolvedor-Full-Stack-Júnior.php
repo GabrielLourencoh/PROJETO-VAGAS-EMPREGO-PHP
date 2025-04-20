@@ -29,7 +29,7 @@
                         <h5 class="titulo-maior">Desenvolvedor Full Stack Júnior</h5>
                         <p class="lead titulo-card">Node.js, React.js, SQL, Git</p>
                             <p class="lead">Desenvolvimento de sistemas web utilizando tecnologias front-end e também tecnologias back-end.</p>
-                    <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                    <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                 </div>
             </div>
         

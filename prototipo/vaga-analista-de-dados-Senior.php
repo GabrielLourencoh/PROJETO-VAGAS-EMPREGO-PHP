@@ -29,7 +29,7 @@
                     <h5 class="titulo-maior">Analista de Dados Sênior</h5>
                     <p class="lead titulo-card">Conhecimento em modelagem de dados, análise estatística e ferramentas de visualização</p>
                         <p class="lead">Responsável pela análise profunda dos dados, extraindo insights.</p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
             </div>
         

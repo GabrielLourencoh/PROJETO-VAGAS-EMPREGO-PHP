@@ -28,7 +28,7 @@
                     <h5 class="titulo-maior">Estagiário de Engenharia de Software</h5>
                     <p class="lead titulo-card">C#, Java, ou Python básico</p>
                         <p class="lead">Conhecimento básico em programação orientada a objetos e desenvolvimento de software.</p>
-                    <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                    <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                 </div>
             </div>
         

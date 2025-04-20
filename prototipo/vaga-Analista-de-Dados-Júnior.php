@@ -29,7 +29,7 @@
                         <h5 class="titulo-maior">Analista de Dados Júnior</h5>
                         <p class="lead titulo-card">Experiência com Power BI, SQL, Excel avançado e Python</p>
                             <p class="lead">Responsável por análise de dados e geração de relatórios para suporte à tomada de decisão.</p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
             </div>
         

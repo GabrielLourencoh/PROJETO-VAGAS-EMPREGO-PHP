@@ -30,7 +30,7 @@
                         <p class="lead titulo-card">Python (Django ou Flask)</p>
                             <p class="lead">Conhecimento na linguagem Python voltado à Django ou Flask</p>
                             <p class="lead">Conhecimento em modelagem de banco de dados com sqlModel.</p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
             </div>
         

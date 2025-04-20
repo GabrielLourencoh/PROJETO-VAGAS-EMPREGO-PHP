@@ -29,7 +29,7 @@
                             <h5 class="titulo-maior">Estagiário de Ciência de Dados</h5>
                             <p class="lead titulo-card">Conhecimento em Python, pandas, SQL e análise exploratória de dados</p>
                             <p class="lead">Noções de aprendizado de máquina e visualização de dados.</p>
-                        <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                        <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                     </div>
             </div>
         

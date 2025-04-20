@@ -29,7 +29,7 @@
                     <h5 class="titulo-maior">Estagiário de Desenvolvimento Web</h5>
                     <p class="lead titulo-card">HTML, CSS, JavaScript (básico ou intermediário)</p>
                         <p class="lead">Familiaridade com uma linguagem de back-end (ex: Node.js, Python, Java,.)</p>
-                    <a href="area_vagas.html" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
+                    <a href="area_vagas.php" role="button" class="btn btn-success mr-2">Voltar à área de vagas</a>
                 </div>
             </div>
         
