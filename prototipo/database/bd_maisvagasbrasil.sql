@@ -1,5 +1,7 @@
-
+-- Criando o banco de dados
 CREATE DATABASE maisvagasbrasil_bd;
+
+-- Usando o banco de dados
 USE maisvagasbrasil_bd;
 
 -- Tabela de usuários
@@ -11,7 +13,7 @@ CREATE TABLE usuarios (
     senha VARCHAR(50) NOT NULL
 );
 
--- Tabela de vagas (referência opcional)
+-- Tabela de vagas 
 CREATE TABLE vagas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_vaga VARCHAR(255) NOT NULL UNIQUE
@@ -33,7 +35,7 @@ CREATE TABLE grupos (
     titulo VARCHAR(255) NOT NULL
 );
 
--- Tabela de cards com link da vaga incluído
+-- Tabela de cards
 CREATE TABLE cards (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo_card VARCHAR(255) NOT NULL,
@@ -51,7 +53,7 @@ INSERT INTO grupos (titulo) VALUES
 ('Análise de Dados'),  
 ('Engenharia de Software');
 
--- Inserindo vagas (opcional)
+-- Inserindo vagas
 INSERT INTO vagas (nome_vaga) VALUES
 ('analista_dados_junior'),
 ('analista_dados_senior'),
@@ -66,7 +68,7 @@ INSERT INTO vagas (nome_vaga) VALUES
 ('estagiario_analise_dados'),
 ('estagiario_engenharia_software');
 
--- Inserindo cards com links
+-- Inserindo cards
 INSERT INTO cards (titulo_card, descricao, imagem_url, link_vaga, grupo_id) VALUES
 ('Estagiário de Desenvolvimento Web', 'HTML, CSS, JavaScript (básico ou intermediário)', 'img/pc.png', 'vaga-desenvolvimento-web.html', 1),
 ('Desenvolvedor Júnior Back-end', 'Python (Django ou Flask)', 'img/programacao.png', 'vaga-desenvolvedor-junior-back-end.html', 1),
