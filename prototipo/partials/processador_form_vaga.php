@@ -17,20 +17,20 @@
             $query_verificar_cadastro = mysqli_query($conn, $sql);
 
             if ($query_verificar_cadastro && mysqli_num_rows($query_verificar_cadastro) > 0) {
-                echo "<p class='text-center text-danger py-2'>Usuário {$nome} - {$email} já está cadastrado nessa vaga!</p>";
+                echo "<p class='text-center text-danger p-3'>Usuário {$nome} - {$email} já está cadastrado nessa vaga!</p>";
             } else {
                 $sql = "insert into vagas_inscricoes (nome_vaga, nome, email, senha, descricao) values ('$nome_vaga', '$nome', '$email', '$senha', '$descricao')";
 
                 $query_inserir = mysqli_query($conn, $sql);
 
                 if ($query_inserir) {
-                    echo "<p class='text-center text-success py-2'>Cadastro realizado com sucesso para o {$nome} - {$email} na vaga: {$nome_vaga}.</p>";
+                    echo "<p class='text-center text-success p-3'>Cadastro realizado com sucesso para o {$nome} - {$email} na vaga: {$nome_vaga}.</p>";
                 } else {
-                    echo "<p class='text-center text-danger py-2'>Erro ao cadastrar à vaga. Tente novamente mais tarde.</p>";
+                    echo "<p class='text-center text-danger p-3'>Erro ao cadastrar à vaga. Tente novamente mais tarde.</p>";
                 }
             }
         } else {
-            echo "<p class='text-center text-danger py-2'>Usuário não cadastrado ou credenciais inválidas!</p>";
+            echo "<p class='text-center text-danger p-3'>Usuário não cadastrado ou credenciais inválidas!</p>";
         }
 
         mysqli_close($conn);
