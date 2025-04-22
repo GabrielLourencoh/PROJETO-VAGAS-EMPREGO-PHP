@@ -1,8 +1,8 @@
 -- Criando o banco de dados
-CREATE DATABASE maisvagasbrasil_bd;
+CREATE DATABASE bd_maisvagasbrasil;
 
 -- Usando o banco de dados
-USE maisvagasbrasil_bd;
+USE bd_maisvagasbrasil;
 
 -- Tabela de usuários
 CREATE TABLE usuarios (
