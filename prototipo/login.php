@@ -95,7 +95,7 @@
                 </div>
                 <p class="text-center">Ainda não possui conta? <a href= "cadastro.html" >Cadastrar-se</a></p>
                 <?php
-                    if (isset($_SESSION['mensagem_sucesso'])){
+                    if (isset($_SESSION['mensagem_sucesso']) && time() - $_SESSION['ultimo_acesso'] < $tempoLimiteSessao){
                         echo "<p class='text-center text-success'>{$_SESSION['mensagem_sucesso']}</p>";
                     } else if ($mostrarErro){
                         echo "<p class='text-center text-danger'>Login inválido! Senha ou email errados.</p>";
