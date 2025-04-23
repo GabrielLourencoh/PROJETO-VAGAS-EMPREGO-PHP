@@ -1,11 +1,41 @@
 <?php
     session_start();
+    $tempoLimiteSessao = 300; //300 segundos == 5 minutos;
+    $mostrarErro = false;
 
     if (isset($_POST['fechar_sessao'])) {
         session_unset();
         session_destroy();
         header("Location: login.php");
         exit;
+    }
+    if(isset($_POST['email']) && isset($_POST['email'])){              
+        include 'database/conexao.php';
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        // variavel de armazena qual consulta sql será rodada
+        $sql = "select * from usuarios where email = '$email' and senha = '$senha'";
+        // realiza a consulta no banco de dados
+        $query = mysqli_query($conn, $sql);
+
+        // variavel/função(mysqli_fetch_array) que transforma nossos dados puxados do select em um array associativo, algo => algo;
+        $dadosUser = mysqli_fetch_array($query);
+
+        if (isset($_SESSION['login']) && time() - $_SESSION['ultimo_acesso'] < $tempoLimiteSessao){
+            $mostrarModal = true;
+        } else {
+            if ($query && mysqli_num_rows($query) == 1){
+                $_SESSION['login'] = $dadosUser['nome'];
+                $_SESSION['ultimo_acesso'] = time();
+                $_SESSION['mensagem_sucesso'] = "Login concluído na conta: {$dadosUser['nome']}";
+                header("Location: login.php");
+                exit;
+            } else {
+                $mostrarErro = true;
+            }
+        } 
+        mysqli_close($conn);
     }
 ?>
 
@@ -44,8 +74,15 @@
             </div>
             
             <div class=" col-12 col-md-7 p-4">
+
                 <h4 class="form-label">Login</h4>
-            
+                <?php
+                    if (isset($_SESSION['login']) && time() - $_SESSION['ultimo_acesso'] < $tempoLimiteSessao){
+                        echo "<p class='text-success'>Login realizado na conta: {$_SESSION['login']}</p>";
+                    } else {
+                        echo "<p class='text-danger'>É necessário realizar o Login</p>";
+                    }
+                ?>
             <form method="POST" action="">
             <div class="mb-3">
                 <label>Email:</label>
@@ -58,34 +95,10 @@
                 </div>
                 <p class="text-center">Ainda não possui conta? <a href= "cadastro.html" >Cadastrar-se</a></p>
                 <?php
-                    if(isset($_POST['email']) && isset($_POST['email'])){
-                        
-                        include 'database/conexao.php';
-
-                        $email = $_POST['email'];
-                        $senha = $_POST['senha'];
-                        $tempoLimiteSessao = 300; //300 segundos == 5 minutos;
-
-                        // variavel de armazena qual consulta sql será rodada
-                        $sql = "select * from usuarios where email = '$email' and senha = '$senha'";
-                        // realiza a consulta no banco de dados
-                        $query = mysqli_query($conn, $sql);
-
-                        // variavel/função(mysqli_fetch_array) que transforma nossos dados puxados do select em um array associativo, algo => algo;
-                        $dadosUser = mysqli_fetch_array($query);
-
-                        if (isset($_SESSION['login']) && time() - $_SESSION['ultimo_acesso'] < $tempoLimiteSessao){
-                            $mostrarModal = true;
-                        } else {
-                            if ($query && mysqli_num_rows($query) == 1){
-                                $_SESSION['login'] = $dadosUser['nome'];
-                                $_SESSION['ultimo_acesso'] = time();
-                                echo "<p class='text-center text-success'>Login concluído na conta: {$dadosUser['nome']}</p>";
-                            } else{
-                                echo "<p class='text-center text-danger'>Login inválido! Senha ou email errados.</p>";
-                            }
-                        }
-                        mysqli_close($conn);
+                    if (isset($_SESSION['mensagem_sucesso'])){
+                        echo "<p class='text-center text-success'>{$_SESSION['mensagem_sucesso']}</p>";
+                    } else if ($mostrarErro){
+                        echo "<p class='text-center text-danger'>Login inválido! Senha ou email errados.</p>";
                     }
                 ?>
             </form>
