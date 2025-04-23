@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if (isset($_POST['fechar_sessao'])) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
     <html lang="pt-br">
         <head>
@@ -48,10 +59,12 @@
                 <p class="text-center">Ainda não possui conta? <a href= "cadastro.html" >Cadastrar-se</a></p>
                 <?php
                     if(isset($_POST['email']) && isset($_POST['email'])){
+                        
                         include 'database/conexao.php';
 
                         $email = $_POST['email'];
                         $senha = $_POST['senha'];
+                        $tempoLimiteSessao = 300; //300 segundos == 5 minutos;
 
                         // variavel de armazena qual consulta sql será rodada
                         $sql = "select * from usuarios where email = '$email' and senha = '$senha'";
@@ -59,16 +72,19 @@
                         $query = mysqli_query($conn, $sql);
 
                         // variavel/função(mysqli_fetch_array) que transforma nossos dados puxados do select em um array associativo, algo => algo;
-                        $dados = mysqli_fetch_array($query);
+                        $dadosUser = mysqli_fetch_array($query);
 
-                        if ($dados){
-                            echo "<p class='text-center text-success'>Login concluído na conta: {$dados['nome']}</p>";
-                        } else{
-                            echo "<p class='text-center text-danger'>Login inválido! Senha ou email errados.</p>";
+                        if (isset($_SESSION['login']) && time() - $_SESSION['ultimo_acesso'] < $tempoLimiteSessao){
+                            $mostrarModal = true;
+                        } else {
+                            if ($query && mysqli_num_rows($query) == 1){
+                                $_SESSION['login'] = $dadosUser['nome'];
+                                $_SESSION['ultimo_acesso'] = time();
+                                echo "<p class='text-center text-success'>Login concluído na conta: {$dadosUser['nome']}</p>";
+                            } else{
+                                echo "<p class='text-center text-danger'>Login inválido! Senha ou email errados.</p>";
+                            }
                         }
-                        
-                        
-
                         mysqli_close($conn);
                     }
                 ?>
@@ -82,5 +98,30 @@
     include 'partials/base_footer.php';
 ?>
 </div>
+<?php
+    if (isset($mostrarModal) && $mostrarModal) {
+?>
+    <div class="modal fade show" tabindex="-1" style="display:block; background-color: rgba(0,0,0,0.5);" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Usuário já está logado</h5>
+        </div>
+        <div class="modal-body">
+            <p>Você já está logado como <strong><?php echo $_SESSION['login']; ?></strong>.</p>
+            <p>Deseja trocar de conta?</p>
+        </div>
+        <div class="modal-footer">
+            <form method="post">
+            <input type="submit" class="btn btn-danger" name="fechar_sessao" value="Sim">
+            </form>
+            <a href="login.php" class="btn btn-secondary">Não</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <?php
+        }   
+    ?>
 </body>
 </html>
