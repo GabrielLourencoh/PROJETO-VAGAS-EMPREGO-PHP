@@ -76,18 +76,6 @@
                             $sql_consulta = "select * from usuarios where email = '$email'";
                             $query_consulta = mysqli_query($conn, $sql_consulta);
 
-                            // if ($senha != $confirmSenha){
-                            //     echo "<p class='text-danger text-center'>Senha e confirmação de senha apresentam diferenças no cadastro! </p>";
-                            // } else {
-                            //     if ($query_consulta && mysqli_num_rows($query_consulta) > 0){
-                            //         echo "<p class='text-danger text-center'>Cadastro inválido, já existe um cadastro feito no e-mail - {$email}!</p>";
-                            //     } else {                               
-                            //         $sql = "insert into usuarios (nome, email, profissao, senha) values ('$nome', '$email', '$profissao', '$senha')";                                
-                            //         $query = mysqli_query($conn, $sql);
-                            //         echo "<p class='text-center text-success'>Cadastro concluído!</p>";
-                            //     }
-                            // }
-
                             if ($query_consulta && mysqli_num_rows($query_consulta) > 0){
                                 echo "<p class='text-danger text-center'>Cadastro inválido, já existe um cadastro feito no e-mail - {$email}!</p>";
                             } else {
