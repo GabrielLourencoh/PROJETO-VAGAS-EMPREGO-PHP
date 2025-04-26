@@ -22,15 +22,12 @@
 ?>
 
 <div class="cor-fundo-cinza pt-2 pb-5">
-    <!-- tlvz futuramente transformar em um carrossel -->
     <div class="container mt-5 text-center">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
-                <!-- imagem de teste -->
                 <img src="img/banner-vagas.png" class="img-fluid w-100" alt="Banner principal da área de vagas">
             </div>
             <div class="col-12 col-md-6 pb-5">
-                <!--  texto -->
                 <h1 class="display-4 titulo-maior">Seja bem-vindo à nossa Área de Vagas!</h1>
                 <p class="lead txt-maior">Aqui você encontrará diversas oportunidades publicadas por empresas em busca de novos talentos. Navegue pelas vagas disponíveis, explore as possibilidades e encontre a chance ideal para dar o próximo passo na sua carreira.</p>
                 <a href="cadastro.php" role="button" class="btn btn-info btn-lg">Cadastrar-se</a>
