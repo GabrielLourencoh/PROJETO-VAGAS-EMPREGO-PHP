@@ -62,7 +62,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary w-100 mt-4">Enviar</button>
                 
-                    <p class="text-center mt-3">Ja possui uma conta? <a href= "login.php" >Entrar</a></p>
+                    <p class="text-center mt-3">Ja possui uma conta? <a href="login.php" >Entrar</a></p>
 
                     <?php
                         if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['profissao']) && isset($_POST['senha']) && isset($_POST['confirmSenha'])){
