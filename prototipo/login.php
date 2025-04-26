@@ -93,7 +93,7 @@
                     <input type="password" class="form-control" placeholder="Digite sua Senha:" name='senha' required>
                     <button type="submit" class="btn btn-primary w-100 mt-4">Enviar</button>
                 </div>
-                <p class="text-center">Ainda não possui conta? <a href= "cadastro.html" >Cadastrar-se</a></p>
+                <p class="text-center">Ainda não possui conta? <a href= "cadastro.php" >Cadastrar-se</a></p>
                 <?php
                     if (isset($_SESSION['mensagem_sucesso']) && time() - $_SESSION['ultimo_acesso'] < $tempoLimiteSessao){
                         echo "<p class='text-center text-success'>{$_SESSION['mensagem_sucesso']}</p>";
